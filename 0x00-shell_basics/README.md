@@ -5,4 +5,5 @@
 ##### 2-bring_me_home => cd : back to the user directory
 ##### 3-listfiles => ls -l : Display the currnt directory content in long format
 ##### 4-listmorefiles => ls -la : Display the currnt directory content & hidden files in long format
-##### 5-listfilesdigitonly => ls -lna : Display the currnt directory content & hidden files (user display in nums)  in long format 
+##### 5-listfilesdigitonly => ls -lna : Display the currnt directory content & hidden files (user display in nums)  in long format
+##### 6-firstdirectory => mkdir /dir/ : Create a folder in other directory 
