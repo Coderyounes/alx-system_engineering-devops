@@ -1,2 +1,2 @@
 #!/bin/bash
-tr 'AaCc' 'EeZz'
+tr [A:c] [Z:e]
