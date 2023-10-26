@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# This Script Will print a Clock
+
+minutes=1
+hour=0
+
+while [ $hour -ne 24 ];
+do
+	echo "Hour: $hour"
+	while [ $minutes -ne 60 ];
+	do
+		echo $minutes
+		((minutes++))
+	done
+	minutes=1
+	((hour++))
+done
