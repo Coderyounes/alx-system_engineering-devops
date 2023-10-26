@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# This Script print "Best School" 10 Times
+for _ in {0..9}; do echo "Best School"; done
