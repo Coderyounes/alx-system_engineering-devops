@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# This Script use cut to take what came after the "-"
+
+mapfile -t arr < <(ls)
+
+for element in "${arr[@]}"; do
+	new=$(echo "$element" | tr '  ' '\n' | cut -d '-' -f 2)
+	echo "$new"
+done
