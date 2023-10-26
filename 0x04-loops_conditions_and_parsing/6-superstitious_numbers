@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# This Script Display number from 1 to 20 but different text in 4th , 9th , 17th loop
+
+i=1
+
+while [ $i -lt 21 ];
+do
+	case $i in
+		4)
+			echo "bad luck from China"
+			;;
+		
+		9)
+			echo "bad luck from Japan"
+			;;
+		17)
+			echo "bad luck from Italy"
+			;;
+		*)
+			echo $i
+			;;
+
+	esac
+	((i++))
+done
