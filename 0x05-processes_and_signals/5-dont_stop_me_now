@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# This Script terminate the Process using Kill
+
+kill "$(pgrep -f 4-to_infinity_and_beyond)"
