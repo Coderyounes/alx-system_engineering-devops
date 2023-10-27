@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# This Script Kill Process from Different terminal
+
+pkill -f 4-to_infinity_and_beyond
