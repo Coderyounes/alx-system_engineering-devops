@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# this Script show pgrep usage to Get procces by name
+
+pgrep bash -l
