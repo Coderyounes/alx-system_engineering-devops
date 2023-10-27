@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# this Script Display All the running PID
+
+ps aux
