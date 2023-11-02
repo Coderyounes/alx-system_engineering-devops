@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# this Script Configure server localhost to resolve to other destination
+# Copie the content of /etc/hosts file into ~/hosts.new
+# then remove the old content & write the new Content using ">" symbol
+# then add the second ip without removing the first one using ">>" symbol
+# last, cp with fore flag "-f" our file to /etc/hosts content
+# The previous Operation will delete the old conf & add the new one
+
+
+
+
+cp /etc/hosts ~/hosts.new
+echo "127.0.0.2		localhost" > ~/hosts.new
+echo "8.8.8.8		facebook.com" >> ~/hosts.new
+cp -f ~/hosts.new /etc/hosts
