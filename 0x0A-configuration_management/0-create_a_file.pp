@@ -1,4 +1,4 @@
-# Create File in certain 'path' with 'content'
+# Create File in certain path with content
 file { '/tmp/school':
   ensure  => file,
   mode    => '0744',
