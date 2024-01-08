@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Install Nginx Server , Configure Index page, add a custome Header
-apt-get update -y
-apt-get install nginx
-echo "Ok!" > /var/www/html/index.html
+apt-get -y update 
+apt-get -y install nginx
+echo "Hello World!" > /var/www/html/index.nginx-debian.html
 sed -i "s/include \/etc\/nginx\/sites-enabled\/\*;/&\n\tadd_header X-Served-By \"$HOSTNAME\";/" /etc/nginx/nginx.conf
 service nginx start
