@@ -1,21 +1,9 @@
 # Add a Custome Header to Nginx Configuration Using Puppet
 
-exec {'update':
-  provider => shell,
-  command => '/usr/bin/apt-get -y update',
+exec { 'http header':
+	command  => 'sudo apt-get update -y;
+	sudo apt-get install nginx -y;
+	sudo sed -i "/server_name _/a add_header X-Served-By $HOSTNAME;" /etc/nginx/sites-available/default
+	sudo service nginx restart',
+	provider => shell,
 }
-
-exec {'Nginx Install':
-  provider => shell,
-  command => '/usr/bin/apt-get -y install nginx',
-}
-
-exec {'add_header':
-  provider => shell,
-  command => 'sed -i "s/include \/etc\/nginx\/sites-enabled\/\*;/&\n\tadd_header X-Served-By \"$HOSTNAME\";/" /etc/nginx/nginx.conf',
-}
-
-exec {'restart':
-  provider => shell,
-  command => '/usr/bin/service nginx restart',
-  }
