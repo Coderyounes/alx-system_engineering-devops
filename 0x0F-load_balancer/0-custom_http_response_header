@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+# Install Nginx Server , Configure Index page, add a custome Header
 apt-get update -y
 apt-get install nginx
 echo "Ok!" > /var/www/html/index.html
