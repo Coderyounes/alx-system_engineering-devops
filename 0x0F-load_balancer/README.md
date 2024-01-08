@@ -1,4 +1,4 @@
-# Load Blanacer 
+# Load Balancer 
 This Repository Contain Some Basic Task About Load Blancer
 
 ### Definition
