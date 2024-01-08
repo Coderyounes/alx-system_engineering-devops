@@ -13,8 +13,8 @@ frontend load_balancer
 
 backend servers
 	balance roundrobin
-	server 379988-web-01 54.89.194.187:80 check
-	server 379988-web-02 54.157.141.63:80 check
+	server web-01 54.89.194.187:80 check
+	server web-02 54.157.141.63:80 check
 " >> /etc/haproxy/haproxy.cfg
 
 service haproxy restart
