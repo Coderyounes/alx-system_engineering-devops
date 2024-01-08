@@ -2,12 +2,12 @@
 
 exec {'update':
   provider => shell,
-  command => 'sudo apt-get -y update',
+  command => '/usr/bin/apt-get -y update',
 }
 
 exec {'Nginx Install':
   provider => shell,
-  command => 'sudo apt-get -y install nginx',
+  command => '/usr/bin/apt-get -y install nginx',
 }
 
 exec {'add_header':
@@ -17,5 +17,5 @@ exec {'add_header':
 
 exec {'restart':
   provider => shell,
-  command => 'sudo service nginx restart',
+  command => '/usr/bin/service nginx restart',
   }
