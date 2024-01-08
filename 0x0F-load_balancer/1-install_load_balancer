@@ -1,20 +1,18 @@
 #!/usr/bin/env bash
 # Install Nginx Server , Configure Index page, add a custome Header
 
-apt-get install --no-install-recommends software-properties-common
-add-apt-repository ppa:vbernat/haproxy-2.6
-apt-get install haproxy=2.6.\*
+sudo apt-get -y update
+sudo apt-get -y install haproxy
+sudo chown  $USER:$USER /etc/haproxy/haproxy.cfg
 
 echo "
-frontend load_balancer
-	bind *:80
-	mode http
-	default_backend servers
+frontend younes
+    bind *:80
+    mode http
+    default_backend app
+backend app
+    balance roundrobin
+    server 379988-web-01 54.89.194.187:80 check
+    server 379988-web-02 54.157.141.63:80 check" >> /etc/haproxy/haproxy.cfg
 
-backend servers
-	balance roundrobin
-	server web-01 54.89.194.187:80 check
-	server web-02 54.157.141.63:80 check
-" >> /etc/haproxy/haproxy.cfg
-echo "ENABLED=1" >> /etc/default/haproxy
-service haproxy restart
+sudo service haproxy restart
