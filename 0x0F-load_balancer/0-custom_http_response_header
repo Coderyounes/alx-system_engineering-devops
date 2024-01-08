@@ -1,0 +1,7 @@
+#!/bin/bash
+
+apt-get update -y
+apt-get install nginx
+echo "Ok!" > /var/www/html/index.html
+sed -i "s/include \/etc\/nginx\/sites-enabled\/\*;/&\n\tadd_header X-Served-By \"$HOSTNAME\";/" /etc/nginx/nginx.conf
+service nginx start
