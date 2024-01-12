@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# Comment
+
+domain_information() {
+    local subdomain="$1"
+    local domain="$2"
+    local line=$(dig "$subdomain"."$domain" +short)
+
+    if [ -n "$line" ]; then
+        echo "$subdomain $line" | awk '{print "The subdomain " $1 " is a A record and points to " $2}'
+    fi
+}
+
+if [ "$#" == 1 ]; then
+    subdomains=("www" "lb-01" "web-01" "web-02")
+
+    for subdomain in "${subdomains[@]}"; do
+        domain_information "$subdomain" "$1"
+    done
+elif [ "$#" == 2 ]; then
+    domain_information "$2" "$1"
+fi
