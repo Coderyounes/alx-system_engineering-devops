@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" """
+""" Script Interact with an API & Extract Some Data"""
 import requests
 import sys
 
