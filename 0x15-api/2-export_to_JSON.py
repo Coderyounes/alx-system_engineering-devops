@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """Python Script Same As Task#0 But Export data in JSon"""
 
-import requests
 import json
+import requests
 import sys
 
 if __name__ == "__main__":
