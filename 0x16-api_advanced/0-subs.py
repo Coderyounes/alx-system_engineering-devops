@@ -11,7 +11,9 @@ def number_of_subscribers(subreddit):
             return - 0 if subreddit not found
     """
     url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
-    header = {'User-agent': "linux.ALX-Tasks:v1.0.0 (by /u/Dizzy_Back7390)"}
+    header = {
+        "User-agent": "linux.ALX-Tasks:v1.0.0 (by /u/Dizzy_Back7390)"
+        }
 
     response = requests.get(url, headers=header, allow_redirects=False)
     if response.status_code == 404:
