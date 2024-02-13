@@ -14,9 +14,7 @@ def number_of_subscribers(subreddit):
     header = {'User-agent': "linux.ALX-Tasks:v1.0.0 (by /u/Dizzy_Back7390)"}
 
     response = requests.get(url, headers=header, allow_redirects=False)
-    if response.status_code != 404:
-        r_json = response.json()
-        data = r_json.get('data')
-        subs = data.get('subscribers')
-        return subs
-    return 0
+    if response.status_code == 404:
+        return 0
+    results = response.json().get("data")
+    return results.get("subscribers")
