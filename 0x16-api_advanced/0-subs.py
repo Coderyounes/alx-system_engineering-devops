@@ -11,12 +11,13 @@ def number_of_subscribers(subreddit):
             return - 0 if subreddit not found
     """
     url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
-    header = {
+    headers = {
         "User-agent": "linux.ALX-Tasks:v1.0.0 (by /u/Dizzy_Back7390)"
         }
 
-    response = requests.get(url, headers=header, allow_redirects=False)
-    if response.status_code == 404:
+    response = requests.get(url, headers=headers, allow_redirects=False)
+    if response.status_code == 200:
+        data = response.json()
+        return data["data"]["subscribers"]
+    else:
         return 0
-    results = response.json().get("data")
-    return results.get("subscribers")
