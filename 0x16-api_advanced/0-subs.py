@@ -17,10 +17,8 @@ def number_of_subscribers(subreddit):
     response = requests.get(url, headers=headers, allow_redirects=False)
 
     if not response.status_code == 200:
-        print("OK")
         return 0
     subscribers = response.json().get('data').get('subscribers')
     if subscribers is not None:
-        print("OK")
         return subscribers
     return 0

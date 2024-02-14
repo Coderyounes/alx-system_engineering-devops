@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ DOC DOC DOC"""
 
-from requests import get
+import requests
 
 
 def top_ten(subreddit):
@@ -13,12 +13,11 @@ def top_ten(subreddit):
     headers = {"User-Agent": "linux:uhXwbQac5CHtsASxHSxtjQ:1.0.0\
             (by /u/Dizzy_Back7390)"}
 
-    response = get(url, headers=headers, allow_redirects=False)
+    response = requests.get(url, headers=headers, allow_redirects=False)
 
     if response.status_code == 200:
         data = response.json()
         for post in data["data"]["children"]:
             print(post["data"]["title"])
-
     else:
         print("None")
