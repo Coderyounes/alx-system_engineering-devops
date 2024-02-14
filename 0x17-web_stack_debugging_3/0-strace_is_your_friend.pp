@@ -1,6 +1,6 @@
 # Puppet script Fix a Typographique issue in wp-setting.php "phpp" to "php"
 
-exec{'fix-wp-setting':
-    command => 'sed -i s/phpp/php/g /var/www/html/wp-setting.php',
-    path    => '/usr/local/bin/:/bin/'
+exec { 'Fix wordpress site':
+  command  => 'sudo sed -i "s/.phpp/.php/" /var/www/html/wp-settings.php',
+  provider => shell,
 }
