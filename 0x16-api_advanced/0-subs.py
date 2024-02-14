@@ -15,8 +15,8 @@ def number_of_subscribers(subreddit):
     session = requests.Session()
     url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
     headers = {
-        "User-Agent": "User-Agent: MyAwesomeApp/1.0\
-        (Linux; U; en-US; your_username/Reddit)",
+        "User-Agent": "User-Agent: ALX-Tasks/1.0\
+        (Linux; U; en-US; Dizzy_Back7390/Reddit)",
         }
     session.headers.update(headers)
     response = session.get(url, allow_redirects=False)
