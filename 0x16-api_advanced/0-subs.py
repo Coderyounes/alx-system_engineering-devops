@@ -15,7 +15,7 @@ def number_of_subscribers(subreddit):
     session = requests.Session()
     url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
     headers = {
-        "User-Agent": "Python-Student/1.0\
+        "User-Agent": "ALX-Tasks/1.0\
         (Linux; U; en-US; by /u/Dizzy_Back7390)",
         }
     session.headers.update(headers)
