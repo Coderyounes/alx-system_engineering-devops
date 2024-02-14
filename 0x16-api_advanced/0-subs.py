@@ -13,13 +13,13 @@ def number_of_subscribers(subreddit):
             return - 0 if subreddit not found
     """
     session = requests.Session()
-    url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
-    headers = {"User-Agent": "python:ALX-Task:v1.0 (by /u/Dizzy_Back7390)"}
+    url = 'https://www.reddit.com/r/{}/about.json'.format(subreddit)
+    headers = {'User-Agent': 'python:ALX-Task:v1.0 (by /u/Dizzy_Back7390)'}
     session.headers.update(headers)
     response = session.get(url, allow_redirects=False)
 
     if response.status_code == 200:
         data = response.json()
-        return data["data"]["subscribers"]
+        return data['data']['subscribers']
     else:
         return 0
